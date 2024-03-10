@@ -1,5 +1,5 @@
 import { Container } from "inversify";
-import { IDatabaseService } from "../types/service";
+import { IDatabaseService } from "../types/Service";
 import { TYPES } from "../constants/TYPES";
 import { DatabaseServiceImpl } from "../services/DatabaServiceImpl";
 import { Bootstrap } from "../../bootstrap";

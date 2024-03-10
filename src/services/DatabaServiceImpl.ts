@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import { IDatabaseService } from "../types/service";
+import { IDatabaseService } from "../types/Service";
 import { DataSource, DataSourceOptions } from "typeorm";
 
 @injectable()

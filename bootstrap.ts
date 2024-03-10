@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { container } from "./src/config/inversify.config";
-import { IDatabaseService } from "./src/types/service";
+import { IDatabaseService } from "./src/types/Service";
 import { InversifyExpressServer } from "inversify-express-utils";
 import express from "express";
 import { log } from "console";
