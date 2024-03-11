@@ -1,11 +1,11 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Recovery {
+export class Question {
   @PrimaryGeneratedColumn()
   id!: number;
   @Column({
     type: "varchar",
   })
-  answer!: string;
+  content!: string;
 }
