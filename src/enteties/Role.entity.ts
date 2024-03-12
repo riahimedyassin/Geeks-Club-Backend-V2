@@ -1,4 +1,6 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import {  Column, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import {Admin} from '../enteties/Admin.entity'
+import { Permission } from "./Permission.entity";
 
 export class Role {
   @PrimaryGeneratedColumn()
@@ -13,4 +15,8 @@ export class Role {
     length: 100,
   })
   descreption!: string;
+  @OneToMany(()=> Admin , (admin) => admin.role)
+  admins! : Admin[]; 
+  @ManyToOne(() => Permission, (permission) => permission)
+  permission! : Permission ; 
 }
