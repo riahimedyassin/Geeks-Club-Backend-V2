@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Member } from "./Member.entity";
 
 @Entity()
 export class Recovery {
@@ -8,4 +9,7 @@ export class Recovery {
     type: "varchar",
   })
   answer!: string;
+  @OneToOne(() => Member,(member) => member.recovery)
+  member! : Member 
+  
 }

@@ -1,4 +1,5 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Member } from "./Member.entity";
 
 export class Address {
   @PrimaryGeneratedColumn()
@@ -15,4 +16,6 @@ export class Address {
     type: "varchar",
   })
   country!: string;
+  @OneToOne(() => Member , (member) => member.address )
+  member! : Member 
 }
