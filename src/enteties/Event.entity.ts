@@ -8,6 +8,8 @@ import {
 } from "typeorm";
 import { Comment } from "./Comment.entity";
 import { Category } from "./Category.entity";
+import { Participant } from "./Participant.entity";
+import { EventLog } from "./EventLog.entity";
 
 @Entity()
 export class Event {
@@ -46,7 +48,11 @@ export class Event {
   })
   picture?: string;
   @OneToMany(() => Comment, (comment) => comment.event)
-  comments! : Comment[]; 
-  @ManyToOne(()=> Category , (category) => category.events)
-  category! : Category ; 
+  comments!: Comment[];
+  @ManyToOne(() => Category, (category) => category.events)
+  category!: Category;
+  @OneToMany(() => Participant, (participant) => participant.event)
+  participants!: Participant[];
+  @ManyToOne(() => EventLog, (log) => log.event)
+  logs!: EventLog[];
 }

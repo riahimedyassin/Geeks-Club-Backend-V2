@@ -1,4 +1,6 @@
-import { Column, CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Member } from "./Member.entity";
+import { Event } from "./Event.entity";
 
 export class Participant {
   @PrimaryGeneratedColumn()
@@ -10,4 +12,8 @@ export class Participant {
   confirmed!: boolean;
   @CreateDateColumn()
   participated_at!: Date;
+  @ManyToOne(()=> Member , (member) => member.participants)
+  member! : Member
+  @ManyToOne(() => Event , (event) => event.participants)
+  event! : Event ;
 }

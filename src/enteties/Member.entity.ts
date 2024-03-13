@@ -4,6 +4,11 @@ import { Address } from "./Address.entity";
 import { Recovery } from "./Recovery.entity";
 import { Point } from "./Point.entity";
 import { Skill } from "./Skill.entity";
+import { Participant } from "./Participant.entity";
+import { Comment } from "../enteties/Comment.entity";
+import { Post } from "./Post.entity";
+import { Reply } from "./Reply.entity";
+import { DepartmentMember } from "./DepartmentMember.entity";
 
 @Entity()
 export class Member extends User {
@@ -24,9 +29,19 @@ export class Member extends User {
   @OneToOne(() => Recovery, (recovery) => recovery.member)
   @JoinColumn()
   recovery!: Recovery;
-  @OneToOne(() => Point , (point) => point.member)
-  @JoinColumn() 
-  point! : Point
-  @OneToMany(() => Skill , (skill) => skill.member)
-  skills! : Skill[]
+  @OneToOne(() => Point, (point) => point.member)
+  @JoinColumn()
+  point!: Point;
+  @OneToMany(() => Skill, (skill) => skill.member)
+  skills!: Skill[];
+  @OneToMany(() => Participant, (paritcipant) => paritcipant.member)
+  participants!: Participant[];
+  @OneToMany(() => Comment, (comment) => comment.member)
+  comments!: Comment[];
+  @OneToMany(() => Post, (post) => post.member)
+  posts!: Post[];
+  @OneToMany(() => Reply, (reply) => reply.member)
+  replies!: Reply[];
+  @OneToMany(() => DepartmentMember, (dep_member) => dep_member.member)
+  dep_member!: DepartmentMember[];
 }

@@ -6,6 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Event } from "./Event.entity";
+import { Member } from "./Member.entity";
 
 @Entity()
 export class Comment {
@@ -20,4 +21,6 @@ export class Comment {
   created_at!: Date;
   @ManyToOne(() => Event, (event) => event.comments)
   event!: Event;
+  @ManyToOne(() => Member , (member) => member.comments)
+  member! : Member 
 }

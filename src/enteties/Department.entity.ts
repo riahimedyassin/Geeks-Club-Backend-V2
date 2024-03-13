@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { DepartmentMember } from "./DepartmentMember.entity";
 
 @Entity()
 export class Department {
@@ -14,4 +15,6 @@ export class Department {
     length: 100,
   })
   descreption!: string;
+  @OneToMany(() => DepartmentMember ,(member) => member.department)
+  members! : DepartmentMember[]
 }

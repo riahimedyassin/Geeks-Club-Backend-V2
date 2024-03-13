@@ -1,9 +1,11 @@
 import {
   Column,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from "typeorm";
+import { Forum } from "./Forum.entity";
 
 @Entity()
 export class ForumLog {
@@ -14,4 +16,6 @@ export class ForumLog {
   })
   @UpdateDateColumn()
   updated_at!: Date;
+  @ManyToOne(() => Forum , (forum) => forum.logs)
+  forum!: Forum ; 
 }

@@ -3,7 +3,10 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
+  ManyToOne,
 } from "typeorm";
+import { Post } from "./Post.entity";
+import { Member } from "./Member.entity";
 
 @Entity()
 export class Reply {
@@ -21,4 +24,8 @@ export class Reply {
   picture!: string;
   @CreateDateColumn()
   created_at!: Date;
+  @ManyToOne(() => Post, (post) => post.replies)
+  post!: Post;
+  @ManyToOne(() => Member , (member) => member.replies)
+  member! : Member
 }

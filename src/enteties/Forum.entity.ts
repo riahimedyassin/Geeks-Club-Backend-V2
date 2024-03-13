@@ -1,4 +1,7 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { ForumLog } from "./ForumLog.entity";
+import { Contributer } from "./Contributer.entity";
+import { Post } from "./Post.entity";
 
 export class Forum {
   @PrimaryGeneratedColumn()
@@ -14,4 +17,10 @@ export class Forum {
     nullable: true,
   })
   picture!: string;
+  @OneToMany(() => ForumLog, (log) => log.forum)
+  logs!: ForumLog[];
+  @OneToMany(() => Contributer, (contributer) => contributer.forum)
+  contributers!: Contributer[];
+  @OneToMany(() => Post, (post) => post.forum)
+  posts!: Post[];
 }

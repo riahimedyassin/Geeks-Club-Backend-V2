@@ -1,4 +1,14 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Column,
+  Entity,
+  ManyToOne,
+  OneToMany,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Forum } from "./Forum.entity";
+import { Reply } from "./Reply.entity";
+import { Member } from "./Member.entity";
 
 @Entity()
 export class Post {
@@ -13,4 +23,10 @@ export class Post {
     nullable: true,
   })
   picture!: string;
+  @OneToMany(() => Reply , (reply) => reply.post) 
+  replies! : Reply[]
+  @ManyToOne(() => Forum, (forum) => forum.posts)
+  forum!: Forum;
+  @ManyToOne(() => Member , (member) => member.posts)
+  member! : Member ; 
 }
