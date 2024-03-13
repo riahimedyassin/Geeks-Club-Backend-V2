@@ -1,4 +1,5 @@
-import { Column, PrimaryGeneratedColumn } from "typeorm";
+import { Column, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Event } from "./Event.entity";
 
 export class Category {
   @PrimaryGeneratedColumn()
@@ -13,4 +14,6 @@ export class Category {
     length: 200,
   })
   descreption!: string;
+  @OneToMany(() => Event, (event) => event.category)
+  events! : Event[]
 }

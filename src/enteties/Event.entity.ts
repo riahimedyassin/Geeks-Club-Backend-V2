@@ -2,8 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Comment } from "./Comment.entity";
+import { Category } from "./Category.entity";
 
 @Entity()
 export class Event {
@@ -41,4 +45,8 @@ export class Event {
     nullable: true,
   })
   picture?: string;
+  @OneToMany(() => Comment, (comment) => comment.event)
+  comments! : Comment[]; 
+  @ManyToOne(()=> Category , (category) => category.events)
+  category! : Category ; 
 }

@@ -2,8 +2,10 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { Event } from "./Event.entity";
 
 @Entity()
 export class Comment {
@@ -16,4 +18,6 @@ export class Comment {
   message!: string;
   @CreateDateColumn()
   created_at!: Date;
+  @ManyToOne(() => Event, (event) => event.comments)
+  event!: Event;
 }
