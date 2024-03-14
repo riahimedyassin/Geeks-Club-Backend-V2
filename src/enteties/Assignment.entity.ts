@@ -2,8 +2,11 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
+import { DepartmentAssignment } from "./DepartmentAssignment.entity";
+import { Submission } from "./Submission.entity";
 
 @Entity()
 export class Assignment {
@@ -24,4 +27,8 @@ export class Assignment {
   end_date!: Date;
   @CreateDateColumn()
   created_at!: Date;
+  @OneToMany(() => DepartmentAssignment, (dep) => dep.assignment)
+  depart_asgnmnt!: DepartmentAssignment[];
+  @OneToMany(() => Submission , (submission) => submission.assignment)
+  submissions! : Submission[]
 }

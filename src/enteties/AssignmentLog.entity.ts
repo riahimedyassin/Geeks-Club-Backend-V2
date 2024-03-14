@@ -1,4 +1,11 @@
-import { Column, CreateDateColumn, PrimaryGeneratedColumn } from "typeorm";
+import {
+  
+  Column,
+  CreateDateColumn,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { Admin } from "./Admin.entity";
 
 export class AssignmentLog {
   @PrimaryGeneratedColumn()
@@ -10,4 +17,6 @@ export class AssignmentLog {
   content!: string;
   @CreateDateColumn()
   updated_at!: Date;
+  @ManyToOne(() => Admin, (admin) => admin.asgnmnt_logs)
+  admin!: Admin;
 }

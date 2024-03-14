@@ -1,5 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { DepartmentMember } from "./DepartmentMember.entity";
+import { DepartmentAssignment } from "./DepartmentAssignment.entity";
+import { Assignment } from "./Assignment.entity";
 
 @Entity()
 export class Department {
@@ -17,4 +19,6 @@ export class Department {
   descreption!: string;
   @OneToMany(() => DepartmentMember ,(member) => member.department)
   members! : DepartmentMember[]
+  @OneToMany(() => DepartmentAssignment ,(asngmt) => asngmt.department)
+  assignments!: Assignment[]
 }

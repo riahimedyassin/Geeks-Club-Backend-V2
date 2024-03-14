@@ -9,9 +9,14 @@ import { Comment } from "../enteties/Comment.entity";
 import { Post } from "./Post.entity";
 import { Reply } from "./Reply.entity";
 import { DepartmentMember } from "./DepartmentMember.entity";
+import { Submission } from "./Submission.entity";
 
 @Entity()
 export class Member extends User {
+  @Column({
+    type: "int",
+    length: 8,
+  })
   CIN!: number;
   @Column({
     type: "varchar",
@@ -44,4 +49,6 @@ export class Member extends User {
   replies!: Reply[];
   @OneToMany(() => DepartmentMember, (dep_member) => dep_member.member)
   dep_member!: DepartmentMember[];
+  @OneToMany(() => Submission, (sub) => sub.member)
+  submissions!: Submission[];
 }

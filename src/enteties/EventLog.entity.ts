@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { Event } from "./Event.entity";
+import { Admin } from "./Admin.entity";
 
 @Entity()
 export class EventLog {
@@ -21,4 +22,6 @@ export class EventLog {
   updated_at!: Date;
   @ManyToOne(() => Event , (event) => event.logs)
   event! : Event ; 
+  @ManyToOne(() => Admin , (admin) => admin.event_logs)
+  admin! : Admin
 }

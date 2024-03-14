@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import {  Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import {Admin} from '../enteties/Admin.entity'
 
 @Entity()
 export class Question {
@@ -8,4 +9,6 @@ export class Question {
     type: "varchar",
   })
   content!: string;
+  @ManyToOne(() => Admin , (admin) => admin.questions)
+  admin! : Admin
 }
