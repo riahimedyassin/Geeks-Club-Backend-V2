@@ -42,3 +42,6 @@ declare interface IBaseRepository<T extends ObjectLiteral> {
    */
   findOneAndDelete(id: number): Promise<boolean>;
 }
+
+declare interface IMemberRepository extends IBaseRepository {
+}
