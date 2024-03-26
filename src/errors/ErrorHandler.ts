@@ -2,6 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
 import { injectable } from "inversify";
 import { IErrorHandler } from "../types";
+import { ValidationError } from "class-validator";
 
 @injectable()
 export class ErrorHandler implements IErrorHandler {
@@ -23,6 +24,12 @@ export class ErrorHandler implements IErrorHandler {
         case err instanceof Error: {
           return this.response(res, err);
         }
+        case err instanceof ValidationError:
+          return res.status(StatusCodes.BAD_REQUEST).json({
+            message: "Validation Error",
+            errors: err,
+            status: StatusCodes.BAD_REQUEST,
+          });
       }
     }
     next();

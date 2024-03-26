@@ -1,4 +1,5 @@
 import { ObjectLiteral } from "typeorm";
+import { Member } from "../enteties/Member.entity";
 
 
 /**
@@ -43,5 +44,10 @@ declare interface IBaseRepository<T extends ObjectLiteral> {
   findOneAndDelete(id: number): Promise<boolean>;
 }
 
-declare interface IMemberRepository extends IBaseRepository {
+/**
+ * @class
+ * @classdesc Member Repository 
+ * @extends {IBaseRepository<Member>}
+ */
+declare interface IMemberRepository extends IBaseRepository<Member> {
 }
