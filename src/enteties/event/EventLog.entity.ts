@@ -7,7 +7,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { Event } from "./Event.entity";
-import { Admin } from "./Admin.entity";
+import { Admin } from "../admin/Admin.entity";
 
 @Entity()
 export class EventLog {

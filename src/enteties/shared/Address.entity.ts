@@ -1,5 +1,5 @@
 import { Column, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Member } from "./Member.entity";
+import { Member } from "../member/Member.entity";
 
 export class Address {
   @PrimaryGeneratedColumn()

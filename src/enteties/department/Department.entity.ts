@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { DepartmentMember } from "./DepartmentMember.entity";
-import { DepartmentAssignment } from "./DepartmentAssignment.entity";
-import { Assignment } from "./Assignment.entity";
+import { DepartmentAssignment } from "../assignment/DepartmentAssignment.entity";
+import { Assignment } from "../assignment/Assignment.entity";
 
 @Entity()
 export class Department {

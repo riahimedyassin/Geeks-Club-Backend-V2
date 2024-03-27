@@ -36,4 +36,7 @@ export abstract class User {
   created_at!: Date;
   @UpdateDateColumn()
   updated_at!: Date;
+  constructor(body: any) {
+    Object.assign(this, body);
+  }
 }

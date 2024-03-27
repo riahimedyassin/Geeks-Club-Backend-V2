@@ -1,7 +1,7 @@
 import { CreateDateColumn, Entity, ManyToOne } from "typeorm";
 import { Department } from "./Department.entity";
-import { Admin } from "./Admin.entity";
-import { Member } from "./Member.entity";
+import { Admin } from "../admin/Admin.entity";
+import { Member } from "../member/Member.entity";
 
 @Entity()
 export class DepartmentMember {

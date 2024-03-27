@@ -6,9 +6,9 @@ import {
   PrimaryColumn,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Forum } from "./Forum.entity";
+import { Forum } from "../Forum.entity";
 import { Reply } from "./Reply.entity";
-import { Member } from "./Member.entity";
+import { Member } from "../../member/Member.entity";
 
 @Entity()
 export class Post {

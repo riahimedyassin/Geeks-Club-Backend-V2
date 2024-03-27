@@ -1,7 +1,7 @@
 import { Column, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { ForumLog } from "./ForumLog.entity";
 import { Contributer } from "./Contributer.entity";
-import { Post } from "./Post.entity";
+import { Post } from "./posts/Post.entity";
 
 export class Forum {
   @PrimaryGeneratedColumn()

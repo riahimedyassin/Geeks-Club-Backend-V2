@@ -1,4 +1,4 @@
-import { Member } from "../enteties/Member.entity";
+import { Member } from "../enteties/member/Member.entity";
 import { IMemberRepository } from "../types/Repository";
 import { BaseRepository } from "./BaseRepository";
 

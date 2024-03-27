@@ -5,7 +5,7 @@ import {
   ManyToOne,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { Admin } from "./Admin.entity";
+import { Admin } from "../admin/Admin.entity";
 
 export class AssignmentLog {
   @PrimaryGeneratedColumn()

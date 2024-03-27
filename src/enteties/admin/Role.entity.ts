@@ -1,5 +1,5 @@
 import {  Column, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import {Admin} from '../enteties/Admin.entity'
+import {Admin} from './Admin.entity'
 import { Permission } from "./Permission.entity";
 
 export class Role {

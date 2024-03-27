@@ -1,5 +1,5 @@
 import { Column, CreateDateColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Member } from "./Member.entity";
+import { Member } from "../member/Member.entity";
 import { Event } from "./Event.entity";
 
 export class Participant {

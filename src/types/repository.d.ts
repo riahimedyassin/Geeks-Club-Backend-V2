@@ -1,6 +1,6 @@
 import { ObjectLiteral } from "typeorm";
-import { Member } from "../enteties/Member.entity";
-import { Admin } from "../enteties/Admin.entity";
+import { Member } from "../enteties/member/Member.entity";
+import { Admin } from "../enteties/admin/Admin.entity";
 
 /**
  * @class

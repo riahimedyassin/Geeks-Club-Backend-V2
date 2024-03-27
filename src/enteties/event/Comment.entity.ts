@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Event } from "./Event.entity";
-import { Member } from "./Member.entity";
+import { Member } from "../member/Member.entity";
 
 @Entity()
 export class Comment {

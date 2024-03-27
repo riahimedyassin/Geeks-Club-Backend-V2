@@ -1,15 +1,15 @@
 import { Column, Entity, JoinColumn, OneToMany, OneToOne } from "typeorm";
-import { User } from "./User";
-import { Address } from "./Address.entity";
-import { Recovery } from "./Recovery.entity";
+import { User } from "../base/User";
+import { Address } from "../shared/Address.entity";
+import { Recovery } from "../recovery/Recovery.entity";
 import { Point } from "./Point.entity";
 import { Skill } from "./Skill.entity";
-import { Participant } from "./Participant.entity";
-import { Comment } from "../enteties/Comment.entity";
-import { Post } from "./Post.entity";
-import { Reply } from "./Reply.entity";
-import { DepartmentMember } from "./DepartmentMember.entity";
-import { Submission } from "./Submission.entity";
+import { Participant } from "../event/Participant.entity";
+import { Comment } from "../event/Comment.entity";
+import { Post } from "../forum/posts/Post.entity";
+import { Reply } from "../forum/posts/Reply.entity";
+import { DepartmentMember } from "../department/DepartmentMember.entity";
+import { Submission } from "../assignment/Submission.entity";
 
 @Entity()
 export class Member extends User {

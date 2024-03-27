@@ -1,5 +1,5 @@
 import {  Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import {Admin} from '../enteties/Admin.entity'
+import {Admin} from '../admin/Admin.entity'
 
 @Entity()
 export class Question {

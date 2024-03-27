@@ -8,7 +8,7 @@ import {
   UpdateDateColumn,
 } from "typeorm";
 import { Assignment } from "./Assignment.entity";
-import { Member } from "./Member.entity";
+import { Member } from "../member/Member.entity";
 
 export class Submission {
   @PrimaryGeneratedColumn()

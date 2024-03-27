@@ -1,4 +1,4 @@
-import { Admin } from "../enteties/Admin.entity";
+import { Admin } from "../enteties/admin/Admin.entity";
 import { IAdminRepository } from "../types/Repository";
 import { BaseRepository } from "./BaseRepository";
 

@@ -1,5 +1,5 @@
 import { Column, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Member } from "./Member.entity";
+import { Member } from "../member/Member.entity";
 
 @Entity()
 export class Recovery {

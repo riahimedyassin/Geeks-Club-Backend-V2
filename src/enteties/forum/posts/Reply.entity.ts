@@ -6,7 +6,7 @@ import {
   ManyToOne,
 } from "typeorm";
 import { Post } from "./Post.entity";
-import { Member } from "./Member.entity";
+import { Member } from "../../member/Member.entity";
 
 @Entity()
 export class Reply {

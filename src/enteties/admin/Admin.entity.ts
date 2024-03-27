@@ -6,12 +6,12 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { User } from "./User";
+import { User } from "../base/User";
 import { Role } from "./Role.entity";
-import { DepartmentMember } from "./DepartmentMember.entity";
-import { Question } from "./Question.entity";
-import { AssignmentLog } from "./AssignmentLog.entity";
-import { EventLog } from "./EventLog.entity";
+import { DepartmentMember } from "../department/DepartmentMember.entity";
+import { Question } from "../shared/Question.entity";
+import { AssignmentLog } from "../assignment/AssignmentLog.entity";
+import { EventLog } from "../event/EventLog.entity";
 
 @Entity()
 export class Admin extends User {
