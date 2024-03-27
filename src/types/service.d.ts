@@ -2,17 +2,6 @@ import { DataSource, Connection, Admin, ObjectLiteral } from "typeorm";
 
 /**
  * @class
- * @abstract
- * @classdesc Basic Service Class
- */
-declare interface IBaseService<T extends ObjectLiteral> {
-  findAll(): Promise<T[]>;
-  findOneAndDelete(id: number): Promise<boolean>;
-  findOneAndUpdate(id: number, changes: Partial<T>): Promise<boolean>;
-}
-
-/**
- * @class
  * @classdesc Database Service Used to connect to the database
  */
 declare interface IDatabaseService {
